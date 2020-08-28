@@ -1,0 +1,14 @@
+{{- if eq .Values.system.type "test"}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-content-test
+data:
+  content: |
+    <!DOCTYPE html>  
+    <html>
+        <head><title>Helm Beispiel Testsystem</title></head>
+        <body>Testsystem in der Version {{ .Chart.Version }}</body>
+      </html>
+
+{{- end}}
