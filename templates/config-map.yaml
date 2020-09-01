@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-content-{{.Values.system.type}}
+data:
+{{ tpl (.Files.Glob (printf "config/%s/*" .Values.system.type)).AsConfig . | indent 2 }}

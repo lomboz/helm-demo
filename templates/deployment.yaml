@@ -56,7 +56,7 @@ spec:
         configMap:
           name: nginx-content-{{.Values.system.type}}
           items:
-            - key: content
+            - key: index.html
               path: index.html
       {{- with .Values.nodeSelector }}
       nodeSelector:
